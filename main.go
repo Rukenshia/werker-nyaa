@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"time"
-	"net/http"
 	"io/ioutil"
+	"net/http"
+	"os"
 	"path"
+	"time"
 )
 
 func log(f *os.File, message string) {
@@ -26,7 +26,7 @@ func main() {
 	outdir := os.Args[5]
 	intermdir := os.Args[6]
 
-	if filename[len(filename) - 4:] != ".mkv" {
+	if filename[len(filename)-4:] != ".mkv" {
 		filename += ".mkv"
 	}
 
@@ -70,7 +70,6 @@ func main() {
 	}
 	log(flog, "dummy file created")
 	log(flog, "starting watchdog to wait for finished MKV")
-
 
 	ticker := time.NewTicker(time.Second * 10)
 
